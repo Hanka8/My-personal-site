@@ -1,3 +1,4 @@
+// data to be displayed
 const data = {
     0: {
         id: 0,
@@ -25,6 +26,13 @@ const data = {
     }
 };
 
+// elemets which content will be changed
+const portfolioHeader = document.querySelector("[data-portfolio-header]");
+const portfolioImage = document.querySelector("[data-portfolio-image]");
+const portfolioText = document.querySelector("[data-portfolio-text]");
+const portfolioSite = document.querySelector("[data-portfolio-site]");
+const portfolioCode = document.querySelector("[data-portfolio-code]");
+
 const themeSwitcherBtn = document.querySelector("[data-theme-switcher]");
 const hamburgerBtn = document.querySelector("[data-hamburger]");
 const dataLinks = document.querySelectorAll("[data-link]");
@@ -33,12 +41,6 @@ const stickyMenu = document.querySelector("[data-sticky-menu]");
 
 const nextBtn = document.querySelector("[data-next]");
 const previousBtn = document.querySelector("[data-previous]");
-
-const portfolioHeader = document.querySelector("[data-portfolio-header]");
-const portfolioImage = document.querySelector("[data-portfolio-image]");
-const portfolioText = document.querySelector("[data-portfolio-text]");
-const portfolioSite = document.querySelector("[data-portfolio-site]");
-const portfolioCode = document.querySelector("[data-portfolio-code]");
 
 const acordionContainer = document.querySelector("[data-acordion]");
 
@@ -96,7 +98,7 @@ hamburgerBtn.addEventListener("click", () => {
 document.addEventListener("scroll", () => {
     if (window.screen.width > 800) {
         if (window.scrollY < 100) {
-        stickyMenu.classList.remove("sticky-menu")
+        stickyMenu.classList.remove("sticky-menu");
     } else {
         stickyMenu.classList.add("sticky-menu");
         } 
@@ -104,25 +106,25 @@ document.addEventListener("scroll", () => {
 });
 
 
-let counter = 0;
+let counterForDisplayedContent = 0;
 
 function nextContent() {
-    if (counter < Object.keys(data).length - 1) {
-        counter++;
+    if (counterForDisplayedContent < Object.keys(data).length - 1) {
+        counterForDisplayedContent++;
     } else {
-        counter = 0;  
+        counterForDisplayedContent = 0;  
     }
-    getNewSlide(counter);
+    getNewSlide(counterForDisplayedContent);
     
 }
 
 function previousContent() {
-    if (counter >= 1) {
-        counter--;    
+    if (counterForDisplayedContent >= 1) {
+        counterForDisplayedContent--;    
     } else {
-        counter = Object.keys(data).length - 1;  
+        counterForDisplayedContent = Object.keys(data).length - 1;  
     }
-    getNewSlide(counter);
+    getNewSlide(counterForDisplayedContent);
 }
 
 // argument - (id) = id of the content to be shown 

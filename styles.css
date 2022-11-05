@@ -32,7 +32,6 @@ html {
 
 body {
     background-color: var(--bg);
-
     transition: .25s;
     color: var(--text);
 }
@@ -62,9 +61,8 @@ a {
     border-style: dotted none none none;
     border-width: 10px;
     border-color: var(--text);
-    width: 100px;
+    width: 20%;
 }
-
 
 .btn {
     padding: 4% 10%;
@@ -118,6 +116,7 @@ a {
     margin-bottom: 10%;
 }
 
+
 .nav__menu {
     position: fixed;
     right: 10%;
@@ -165,11 +164,9 @@ a {
 }
 
 /* HOME */
-#home {
-    padding-top: 40px;;
-}
 
 .home {
+    padding-top: 40px;;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -246,7 +243,6 @@ a {
     margin-bottom: 20%;
 }
 
-
 .about picture img {
     width: 100%;
     
@@ -267,6 +263,7 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    gap: 5%;
 }
 
 .portfolio__content__picture {
@@ -281,7 +278,16 @@ a {
 }
 
 .portfolio__content__description {
-    flex-basis: 20rem;
+    flex-basis: 30rem;
+}
+
+.portfolio__content__description__btncontainer {
+   display: flex;
+   gap: 5%;
+}
+
+.portfolio__content__description__btncontainer a {
+    margin-top: 1rem;
 }
 
 /* FOOTER */
@@ -354,6 +360,7 @@ a {
         width: 70%;
     }
 }
+
 
 @media (max-width: 50rem) {
     .mobile-menu {
