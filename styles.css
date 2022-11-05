@@ -20,9 +20,15 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    color: var(--btn-text);
+    background-color: var(--hover);
+}
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     background-color: var(--bg);
@@ -48,7 +54,7 @@ a {
 .p-p {
     opacity: 0.5;
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .h-r {
@@ -183,6 +189,7 @@ a {
     width: 2rem;
     height: 2rem;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .home__links button:active {
@@ -223,10 +230,26 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 10%;
 }
 
 .about > div {
     flex-basis: 50%;
+}
+
+.about picture {
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1;
+    border: 10px solid var(--hover);
+    flex-basis: 50%;
+    margin-bottom: 20%;
+}
+
+
+.about picture img {
+    width: 100%;
+    
 }
 
 /* PROJECTS */
@@ -345,7 +368,7 @@ a {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-        padding: 20% 10%;
+        padding: 40% 10%;
         animation-name: show-menu;
         animation-duration: .5s;
         animation-fill-mode: forwards;
@@ -388,14 +411,17 @@ a {
     .change .bar1 {
         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
         transform: rotate(-45deg) translate(-9px, 6px);
+        background-color: hsl(50, 80%, 67%);
     }
     .change .bar2 {
         opacity: 0;
+        background-color: hsl(50, 80%, 67%);
     }
 
     .change .bar3 {
         -webkit-transform: rotate(45deg) translate(-3px, -4px);
         transform: rotate(45deg) translate(-5px, -5px);
+        background-color: hsl(50, 80%, 67%);
     }
 
     .hamburger--btn {
@@ -430,6 +456,7 @@ a {
 
     .about {
         flex-direction: column;
+        text-align: center;
     }
 
     .about__container1 {

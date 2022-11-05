@@ -2,7 +2,7 @@ const data = {
     0: {
         id: 0,
         header: "Space tourism multi page",
-        text: "This project is a collaboration between us, Scrimba, and Kevin Powell. If you'd like to see how Kevin would tackle the project, you can follow along on Scrimba's free course.",
+        text: "This was my first multi-page site. I learned how to get data from JSON file using async functions and tried to apply utility classes.",
         src: "assets/space.png",
         page: "https://hanka8.github.io/FM-space-tourism/",
         code: "https://github.com/Hanka8/FM-space-tourism"
@@ -10,7 +10,7 @@ const data = {
     1: {
         id: 1,
         header: "Rock, paper, scissors",
-        text: "This project is a collaboration between us, Scrimba, and Kevin Powell. If you'd like to see how Kevin would tackle the project, you can follow along on Scrimba's free course.", 
+        text: "Simple rock - paper - scissors game, where I practised my JavaScript skills and learned about browser local storage. There were also some little challenges in applying borders and outlines for the buttons.", 
         src: "assets/rock-paper-scissors.png",
         page: "https://hanka8.github.io/RockPaperScissors_FM/",
         code: "https://github.com/Hanka8/RockPaperScissors_FM"
@@ -18,7 +18,7 @@ const data = {
     2: {
         id: 2,
         header: "Password generator",
-        text: "This project is a collaboration between us, Scrimba, and Kevin Powell. If you'd like to see how Kevin would tackle the project, you can follow along on Scrimba's free course.",
+        text: "This little app is generating a random password based on the selected inclusion opitons. Great practise for JavaScript sklills.",
         src: "assets/password.png",
         page: "https://hanka8.github.io/Password-generator/",
         code: "https://github.com/Hanka8/Password-generator"
@@ -79,6 +79,7 @@ hamburgerBtn.addEventListener("click", () => {
             <a class="mobile-menu__item" href="#portfolio">Portfolio</a>
         `;
         navBar.append(mobileMenu);
+        themeSwitcherBtn.style.color = "hsl(50, 80%, 67%)";
         hamburgerBtn.dataset.open = 1;
     } else {
         hamburgerBtn.firstChild.name = "menu-outline";
@@ -86,6 +87,7 @@ hamburgerBtn.addEventListener("click", () => {
         let mobileMenu = document.querySelector(".mobile-menu");
         navBar.removeChild(mobileMenu);
         mobileMenu.style.display = "none";
+        themeSwitcherBtn.style.color = "var(--text)";
         hamburgerBtn.dataset.open = 0;
     }
     
