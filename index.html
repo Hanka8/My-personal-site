@@ -10,8 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
     <title>Hana Maruskevicova</title>
 </head>
 
@@ -19,7 +17,7 @@
     <section id="home" class="section">
     <nav class="nav" data-nav>
         <p class="nav__name">Hana Maruškevičová</p>
-        <menu class="nav__menu" data-sticky-menu>
+        <div class="nav__menu" data-sticky-menu>
             <a class="nav__menu__item" href="#home">Home</a>
             <a class="nav__menu__item" href="#about">About</a>
             <a class="nav__menu__item" href="#portfolio">Portfolio</a>
@@ -32,9 +30,9 @@
                 <span class="bar2"></span>
                 <span class="bar3"></span>
             </button>
-        </menu>
+        </div>
     </nav>
-    <main class="home">
+    <div class="home">
         <div class="home__links">
             <a class="btn-github" data-link  href="https://github.com/Hanka8"></a>
             <a class="btn-codewars" data-link href="https://www.codewars.com/users/Hanka8"></a>
@@ -42,14 +40,12 @@
         <div class="home__intro">
             <h1 class="h-1">Hi, I am Hana</h1>
             <p class="p-p">A passionate web developer searching for ways to learn new skills.</p>
-            <button class="btn">
-                <a href="#contact">Contact me</a>
-            </button>
+            <a class="btn" href="#contact">Contact me</a>         
         </div>
         <div class="home__picture">
             <img src="assets/blob.png" alt="Hana">
         </div>
-    </main>
+    </div>
     </section>
 
     <hr class="h-r">
@@ -92,5 +88,7 @@
         <a href="tel:+420723479133">+420 728 428 934</a>
     </footer>
 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
