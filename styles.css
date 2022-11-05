@@ -106,6 +106,7 @@ a {
 .nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 10%;
@@ -359,8 +360,11 @@ a {
         color:hsl(50, 80%, 67%);
         text-decoration: none;
     }
+    .nav__name {
+        font-size: 1rem;
+    }
     .nav__menu {
-        position: fixed;
+        position: relative;
         z-index: 2;
     }
     .section {
@@ -424,6 +428,14 @@ a {
         text-align: center;
     }
 
+    .about {
+        flex-direction: column;
+    }
+
+    .about__container1 {
+        order: 1;
+    }
+
     .portfolio {
         text-align: center;
     }
@@ -432,6 +444,7 @@ a {
         flex-wrap: wrap;
         justify-content: center;
         position: relative;
+        padding-bottom: 15rem;
     }
 
     .portfolio__content__description {
@@ -451,5 +464,11 @@ a {
 
     .right {
         right: 0;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 }
