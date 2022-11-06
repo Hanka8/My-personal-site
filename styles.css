@@ -285,6 +285,7 @@ a {
 
 .portfolio__content__description__btncontainer {
    display: flex;
+   justify-content: space-between;
    gap: 5%;
 }
 
@@ -365,6 +366,14 @@ a {
 
 
 @media (max-width: 50rem) {
+    .p-p {
+      font-size: 1rem;  
+    }
+
+    .about__container1 .h-1, .portfolio .h-1 {
+         margin-bottom: 3rem;
+    }
+
     .mobile-menu {
         position: fixed;
         top: 0;
@@ -470,6 +479,7 @@ a {
 
     .about__container1 {
         order: 1;
+        width: 70%;
     }
 
     .portfolio {
@@ -485,7 +495,10 @@ a {
 
     .portfolio__content__description {
         order: 1;
-        
+    }
+
+    .portfolio__content__description .h-2 {
+        margin-top: 1rem;
     }
 
     .arrow {
@@ -506,5 +519,11 @@ a {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+}
+
+@media (max-width: 25rem) {
+    .h-r:first-of-type {
+        display: none;
     }
 }
