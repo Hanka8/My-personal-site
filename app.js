@@ -72,28 +72,54 @@ themeSwitcherBtn.addEventListener("click", () => {
 
 hamburgerBtn.addEventListener("click", () => {
     if (hamburgerBtn.dataset.open == 0) {
-        hamburgerBtn.classList.add("change");
-        let mobileMenu = document.createElement("div");
-        mobileMenu.classList.add("mobile-menu");
-        mobileMenu.innerHTML = `
+        openMobileMenu();
+    } else {
+        closeMobileMenu();
+    }
+    
+});
+
+
+function openMobileMenu() {
+    hamburgerBtn.classList.add("change");
+    let mobileMenu = document.createElement("div");
+    mobileMenu.classList.add("mobile-menu");
+    mobileMenu.innerHTML = `
             <a class="mobile-menu__item" href="#home">Home</a>
             <a class="mobile-menu__item" href="#about">About</a>
             <a class="mobile-menu__item" href="#portfolio">Portfolio</a>
         `;
-        navBar.append(mobileMenu);
-        themeSwitcherBtn.style.color = "hsl(50, 80%, 67%)";
-        hamburgerBtn.dataset.open = 1;
-    } else {
-        hamburgerBtn.firstChild.name = "menu-outline";
-        hamburgerBtn.classList.remove("change");
-        let mobileMenu = document.querySelector(".mobile-menu");
-        navBar.removeChild(mobileMenu);
-        mobileMenu.style.display = "none";
-        themeSwitcherBtn.style.color = "var(--text)";
-        hamburgerBtn.dataset.open = 0;
-    }
-    
-});
+    navBar.append(mobileMenu);
+    themeSwitcherBtn.style.color = "hsl(50, 80%, 67%)";
+    hamburgerBtn.dataset.open = 1;
+
+    let startTouch = 0;
+    let endTouch = 0;
+
+    mobileMenu.addEventListener("touchstart", (e) => {
+        startTouch = e.changedTouches[0].pageX;
+        console.log(startTouch);
+    });
+
+    mobileMenu.addEventListener("touchend", (x) => {
+        endTouch = x.changedTouches[0].pageX;
+        if (endTouch - startTouch > 30) {
+            closeMobileMenu();
+        };
+        console.log(endTouch);
+    });
+
+}
+
+function closeMobileMenu() {
+    hamburgerBtn.firstChild.name = "menu-outline";
+    hamburgerBtn.classList.remove("change");
+    let mobileMenu = document.querySelector(".mobile-menu");
+    navBar.removeChild(mobileMenu);
+    mobileMenu.style.display = "none";
+    themeSwitcherBtn.style.color = "var(--text)";
+    hamburgerBtn.dataset.open = 0;
+}
 
 document.addEventListener("scroll", () => {
     if (window.screen.width > 800) {
