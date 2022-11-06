@@ -302,6 +302,19 @@ a {
     justify-content: space-between;
     padding: 10%;
     padding-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.footer::after {
+    content: "";
+    position: absolute;
+    inset:0;
+    top: -5px;
+    width: 100%;
+    background-color: var(--hover);
+    height: 20px;
+    z-index: -1;
 }
 
 .footer a {
