@@ -185,7 +185,16 @@ acordionContainer.addEventListener("touchend", (x) => {
     }
 });
 
-portfolioImage.addEventListener("click", (e) => {
+portfolioImage.addEventListener("click", (e) => openModal(e));
+
+
+function closeModal() {
+    let modal = document.querySelector(".modal");
+    document.querySelector("body").removeChild(modal);
+}
+
+// function openModal - (e) = targeted event
+function openModal(e) {
     let modal = document.createElement("aside");
     let modalContainer = document.createElement("div");
     let modalImg = document.createElement("img");
@@ -206,11 +215,5 @@ portfolioImage.addEventListener("click", (e) => {
             closeModal();
         }
     })
-});
-
-
-function closeModal() {
-    let modal = document.querySelector(".modal");
-    document.querySelector("body").removeChild(modal);
 }
 
